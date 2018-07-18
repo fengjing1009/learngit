@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: testenv-config
+  namespace: default
+  labels:
+    software: apache
+    project: sc
+    app: configmap
+    version: v1
+data: 
+  EUREKA_SERVER_ADDRESS: |
+    http://admin:admin@eureka:8761/eureka/
+  CONFIG_SERVER_ADDRESS: |
+    http://admin:db1ab002-1fba-476d-a421-22113355@config:8888
+  DB_MASTER_SERVER_URL: |
+    jdbc:sqlserver://192.168.31.160:1433
+  REDIS_CLUSTER_NODES: |
+    192.168.31.146:7001,192.168.31.146:7002,192.168.31.147:7001,192.168.31.147:7002,192.168.31.167:7001,192.168.31.167:7002
+  BOOTSTRAP_SERVERS: |
+    192.168.31.146:9092,192.168.31.147:9092,192.168.31.167:9092
+  ELK_ENABLED: |
+    true
